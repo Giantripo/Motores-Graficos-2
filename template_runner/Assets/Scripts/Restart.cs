@@ -9,10 +9,12 @@ public class Restart : MonoBehaviour
     }
 
     private void GetInput()
-    {
+    {         
         if (Input.GetKeyDown(KeyCode.R))
         {
+            //reanuda el tiempo
             Time.timeScale = 1;
+            //desactiva la ui
             SceneManager.LoadScene(0);
         }
     }
