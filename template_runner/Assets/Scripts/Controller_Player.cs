@@ -27,6 +27,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Jump()
     {
+        //si es que esta en el piso y se presiona la W salta
         if (floored)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -38,6 +39,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Duck()
     {
+        //si esta en el piso y se presiona la S disminuye su tamaño
         if (floored)
         {
             if (Input.GetKey(KeyCode.S))
@@ -58,6 +60,7 @@ public class Controller_Player : MonoBehaviour
             }
         }
         else
+        //si es que esta en el piso y se presiona la S baja 
         {
             if (Input.GetKeyDown(KeyCode.S))
             {
@@ -68,12 +71,13 @@ public class Controller_Player : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        //cuando toca un objeto con el tag enemy el jugador desaparece y la IU aparece
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
             Controller_Hud.gameOver = true;
         }
-
+        //cuando toca un objeto con el tag floor el jugador puede saltar, ya que floored se hace verdadero
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = true;
@@ -82,6 +86,7 @@ public class Controller_Player : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        //esto funciona para que cuando deje de estar contacto con el "floor" el booleano floored pase a ser falso, para que player no pueda saltar en el aire
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = false;

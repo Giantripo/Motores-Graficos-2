@@ -12,10 +12,12 @@ public class Controller_Enemy : MonoBehaviour
 
     void Update()
     {
+        //hace que los enemigos se muevan hacia la izquierda
         rb.AddForce(new Vector3(-enemyVelocity, 0, 0), ForceMode.Force);
         OutOfBounds();
     }
 
+    //hace que el gameObject asignado, se destruya cuando su posicion sea menor a 15, es decir no se vea en pantalla
     public void OutOfBounds()
     {
         if (this.transform.position.x <= -15)

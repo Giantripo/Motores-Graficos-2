@@ -14,7 +14,9 @@ public class Parallax : MonoBehaviour
 
     void Update()
     {
+        //hace que se mueva el fondo
         transform.position = new Vector3(transform.position.x - parallaxEffect, transform.position.y, transform.position.z);
+        //hace que el fondo se repita cuando termina
         if (transform.localPosition.x < -20)
         {
             transform.localPosition = new Vector3(20, transform.localPosition.y, transform.localPosition.z);

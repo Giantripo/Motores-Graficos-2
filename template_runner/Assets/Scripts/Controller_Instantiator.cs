@@ -21,14 +21,16 @@ public class Controller_Instantiator : MonoBehaviour
 
     private void ChangeVelocity()
     {
+        //a medida que pasa el tiempo, este aumenta y hace que vayan mas rapido los enemigos
         time += Time.deltaTime;
         Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
     }
 
     private void SpawnEnemies()
     {
+        //hace que respawningTimer disminuya y genera el primer enemigo
         respawningTimer -= Time.deltaTime;
-
+        //cuando respawningTimer es menor a 0 se genera un nuevo enemigo de forma aleatoria en la lista de enemigos que hay y tambien se controlan cada cuanto spawnean uno del otro
         if (respawningTimer <= 0)
         {
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);

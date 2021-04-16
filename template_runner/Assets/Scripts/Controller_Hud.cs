@@ -20,10 +20,12 @@ public class Controller_Hud : MonoBehaviour
     {
         if (gameOver)
         {
+            //hace que el tiempo se detengay activa la UI con el numero de distancia recorrida y que perdio.
             Time.timeScale = 0;
             gameOverText.text = "Game Over \n Total Distance: " + distance.ToString();
             gameOverText.gameObject.SetActive(true);
         }
+        //si gameOver sigue siendo true aumenta la distancia y la imprime en pantalla con la UI
         else
         {
             distance += Time.deltaTime;
