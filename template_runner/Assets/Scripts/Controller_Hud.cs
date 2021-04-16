@@ -29,7 +29,9 @@ public class Controller_Hud : MonoBehaviour
         else
         {
             distance += Time.deltaTime;
-            distanceText.text = distance.ToString();
+            //transformo float en int
+            int distanceToInt = (int)distance;
+            distanceText.text = distanceToInt.ToString();
         }
     }
 }

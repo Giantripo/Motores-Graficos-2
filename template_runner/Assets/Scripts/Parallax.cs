@@ -4,7 +4,7 @@ public class Parallax : MonoBehaviour
 {
     public GameObject cam;
     private float length, startPos;
-    public float parallaxEffect;
+    public float parallaxEffect ;
 
     void Start()
     {
@@ -21,5 +21,11 @@ public class Parallax : MonoBehaviour
         {
             transform.localPosition = new Vector3(20, transform.localPosition.y, transform.localPosition.z);
         }
+        //desactivo el movimiento del fondo cuando el jugador pierde
+        if (Controller_Hud.gameOver ==true)
+        {
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        }
     }
+
 }

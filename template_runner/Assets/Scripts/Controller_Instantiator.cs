@@ -6,7 +6,8 @@ public class Controller_Instantiator : MonoBehaviour
     public List<GameObject> enemies;
     public GameObject instantiatePos;
     public float respawningTimer;
-    private float time = 0;
+    public float time = 0;
+    
 
     void Start()
     {
@@ -21,8 +22,9 @@ public class Controller_Instantiator : MonoBehaviour
 
     private void ChangeVelocity()
     {
-        //a medida que pasa el tiempo, este aumenta y hace que vayan mas rapido los enemigos
-        time += Time.deltaTime;
+          //a medida que pasa el tiempo, este aumenta y hace que vayan mas rapido los enemigos
+          time += Time.deltaTime;
+        
         Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
     }
 

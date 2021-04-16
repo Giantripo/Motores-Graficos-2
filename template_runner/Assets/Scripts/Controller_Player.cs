@@ -76,6 +76,7 @@ public class Controller_Player : MonoBehaviour
         {
             Destroy(this.gameObject);
             Controller_Hud.gameOver = true;
+            
         }
         //cuando toca un objeto con el tag floor el jugador puede saltar, ya que floored se hace verdadero
         if (collision.gameObject.CompareTag("Floor"))

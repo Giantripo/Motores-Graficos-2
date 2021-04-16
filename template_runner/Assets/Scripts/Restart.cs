@@ -14,7 +14,7 @@ public class Restart : MonoBehaviour
         {
             //reanuda el tiempo
             Time.timeScale = 1;
-            //desactiva la ui
+            //carga la escena desde 0 para que el juego vuelva a comenzar
             SceneManager.LoadScene(0);
         }
     }
