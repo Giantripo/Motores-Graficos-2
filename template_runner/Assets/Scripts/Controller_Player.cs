@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Controller_Player : MonoBehaviour
 {
     private Rigidbody rb;
@@ -7,6 +7,7 @@ public class Controller_Player : MonoBehaviour
     private float initialSize;
     private int i = 0;
     private bool floored;
+    
 
     private void Start()
     {
@@ -84,6 +85,11 @@ public class Controller_Player : MonoBehaviour
         {
             floored = true;
         }
+        if (collision.gameObject.CompareTag("nafta"))
+        {
+            ScrollBar.distanceScrollBar -= 2.5f;
+            
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -92,6 +98,11 @@ public class Controller_Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = false;
+        }
+
+        if (collision.gameObject.CompareTag("nafta"))
+        {
+            ScrollBar.distanceScrollBar += Time.deltaTime;
         }
     }
 }

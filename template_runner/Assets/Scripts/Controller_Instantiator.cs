@@ -7,11 +7,12 @@ public class Controller_Instantiator : MonoBehaviour
     public GameObject instantiatePos;
     public float respawningTimer;
     public float time = 0;
-    
+    public GameObject nafta;
 
     void Start()
     {
         Controller_Enemy.enemyVelocity = 2;
+        ControllerNafta.naftaVelocity = 2;
     }
 
     void Update()
@@ -23,9 +24,9 @@ public class Controller_Instantiator : MonoBehaviour
     private void ChangeVelocity()
     {
           //a medida que pasa el tiempo, este aumenta y hace que vayan mas rapido los enemigos
-          time += Time.deltaTime;
-        
+        time += Time.deltaTime;
         Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
+        ControllerNafta.naftaVelocity = Mathf.SmoothStep(1f, 15f, time / 50f);
     }
 
     private void SpawnEnemies()
@@ -36,8 +37,10 @@ public class Controller_Instantiator : MonoBehaviour
         if (respawningTimer <= 0)
         {
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);
+            Instantiate(nafta, instantiatePos.transform);
             respawningTimer = UnityEngine.Random.Range(2, 6);
         }
+
     }
 
 }

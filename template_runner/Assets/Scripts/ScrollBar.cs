@@ -26,7 +26,11 @@ public class ScrollBar : MonoBehaviour
         if (bar.value == 10)
         {
             Controller_Hud.gameOver = true;
-
         }
+        //if (bar.value < 1 )
+        //{
+        //    distanceScrollBar = 1;
+        //    distanceScrollBar += Time.deltaTime;
+        //}
     }
 }

@@ -565,6 +565,7 @@ MonoBehaviour:
   instantiatePos: {fileID: 432534838}
   respawningTimer: 0
   time: 0
+  nafta: {fileID: 3348303758758183991, guid: 277bc1ebb971f9b4099608c116552b51, type: 3}
 --- !u!4 &432534840
 Transform:
   m_ObjectHideFlags: 0
@@ -1355,7 +1356,7 @@ GameObject:
   - component: {fileID: 1018040024}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
