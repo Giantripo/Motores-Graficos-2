@@ -39,4 +39,5 @@ public class Controller_Instantiator : MonoBehaviour
             respawningTimer = UnityEngine.Random.Range(2, 6);
         }
     }
+
 }

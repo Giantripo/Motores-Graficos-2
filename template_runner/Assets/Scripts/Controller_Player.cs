@@ -74,6 +74,7 @@ public class Controller_Player : MonoBehaviour
         //cuando toca un objeto con el tag enemy el jugador desaparece y la IU aparece
         if (collision.gameObject.CompareTag("Enemy"))
         {
+
             Destroy(this.gameObject);
             Controller_Hud.gameOver = true;
             
