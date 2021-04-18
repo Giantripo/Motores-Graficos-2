@@ -6,12 +6,14 @@ public class Controller_Hud : MonoBehaviour
     public static bool gameOver = false;
     public Text distanceText;
     public Text gameOverText;
-    private float distance = 0;
+    public float distance;
+    public float maxDistanceHud;
 
     void Start()
     {
+        
         gameOver = false;
-        distance = 0;
+        //distance = 0;
         distanceText.text = distance.ToString();
         gameOverText.gameObject.SetActive(false);
     }
@@ -32,6 +34,17 @@ public class Controller_Hud : MonoBehaviour
             //transformo float en int
             int distanceToInt = (int)distance;
             distanceText.text = distanceToInt.ToString();
+
+        }
+
+        maxDistanceHud = 5;
+
+        Persistencia.instancia.data.maxDistance += Time.deltaTime;
+
+        if(maxDistanceHud < Persistencia.instancia.data.maxDistance)
+        {
+            
+            Debug.Log("superaste el record");
         }
     }
 }

@@ -25,4 +25,12 @@ public class Controller_Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 }
