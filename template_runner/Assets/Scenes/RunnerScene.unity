@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    maxDistance: 0
+    ActualDistance: 0
     record: 0
     vidaJugador: 0
     puertaAbierta: 0
@@ -2029,7 +2029,8 @@ MonoBehaviour:
   distanceText: {fileID: 622753981}
   gameOverText: {fileID: 648518006}
   distance: 0
-  maxDistanceHud: 0
+  puntajeMaximo: 2
+  nuevoPuntajeMaximo: 0
 --- !u!114 &1568783178
 MonoBehaviour:
   m_ObjectHideFlags: 0
