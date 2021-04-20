@@ -5,6 +5,8 @@ public class Controller_Hud : MonoBehaviour
 {
     public static bool gameOver = false;
     public Text distanceText;
+    public Text recordTxt;
+    public Text recordTxt2;
     public Text gameOverText;
     public float distance = 0;
     public float maxDistance = 0;
@@ -17,10 +19,14 @@ public class Controller_Hud : MonoBehaviour
         
         gameOver = false;
         distance = 0;
+        int recordToInt = (int) Persistencia.instancia.data.record;
+        recordTxt2.text = "Actual record :" + recordToInt;
+        recordTxt2.gameObject.SetActive(true);
         distanceText.text = distance.ToString();
         gameOverText.gameObject.SetActive(false);
-        
-        
+        recordTxt.gameObject.SetActive(false);
+
+
     }
 
     void Update()
@@ -29,13 +35,16 @@ public class Controller_Hud : MonoBehaviour
         {
             //hace que el tiempo se detengay activa la UI con el numero de distancia recorrida y que perdio.
             Time.timeScale = 0;
-            gameOverText.text = "Game Over \n Total Distance: " + distance.ToString();
+            int distanceToInt = (int)distance;
+            gameOverText.text = "Game Over \n Total Distance: " + distanceToInt.ToString();
             gameOverText.gameObject.SetActive(true);
 
             if (Persistencia.instancia.data.record < maxDistance)
             {
+                recordTxt.gameObject.SetActive(true);
                 Persistencia.instancia.data.record = maxDistance;
-                Debug.Log("nuevo puntaje maximo" + Persistencia.instancia.data.record);
+                int recordToInt = (int)Persistencia.instancia.data.record;
+                recordTxt.text = "New record: " + recordToInt;
             }
             
            
