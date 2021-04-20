@@ -8,18 +8,21 @@ public class Shoot : MonoBehaviour
     public Rigidbody balaPrefab;
     public Transform disparador;
     public Rigidbody balaImpulso;
-    // Start is called before the first frame update
+  
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.F))
         {
+            //instancia el prefab en una posicion determinada
             balaImpulso = Instantiate(balaPrefab, disparador.position, Quaternion.identity);
+            //le añade una fuerza al prefab para que sea disparado
             balaImpulso.AddForce(disparador.forward * 100 * velDisparo);
         }
     }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ShaderFloor : MonoBehaviour
 {
-    Mesh mesh;
-    MeshRenderer meshRenderer;
-    MeshFilter meshFilter;
+         Mesh mesh;
+         MeshRenderer meshRenderer;
+         MeshFilter meshFilter;
         List<Vector3> vertices;
         List<int> triangles;
         List<Vector2> uv;
@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Material material;
     public Vector3 maxTiles = new Vector3(5, 0, 5);
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         meshFilter = gameObject.AddComponent<MeshFilter>();
@@ -65,7 +65,7 @@ public class NewBehaviourScript : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         
