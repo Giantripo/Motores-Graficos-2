@@ -39,6 +39,7 @@ public class Controller_Hud : MonoBehaviour
             gameOverText.text = "Game Over \n Total Distance: " + distanceToInt.ToString();
             gameOverText.gameObject.SetActive(true);
 
+            //si el record persistido es menor a la distancia maxima se muestra en pantalla el nuevo record y la distancia persistida pasa a ser igual a la maxdistance
             if (Persistencia.instancia.data.record < maxDistance)
             {
                 recordTxt.gameObject.SetActive(true);
@@ -61,7 +62,7 @@ public class Controller_Hud : MonoBehaviour
 
         }
 
-        
+        //si la distancia es mayor a la distancia maxima anteior y a la distancia maxima persistida, la distancia maxima se convierte en ese numero, de forma que es el nuevo record
         if(distance > maxDistance && distance> Persistencia.instancia.data.record)
         {
             maxDistance = distance;
