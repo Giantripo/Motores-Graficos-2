@@ -14,6 +14,7 @@ public class ScrollBar : MonoBehaviour
         bar = GetComponent<Slider>();
         //la scrollbar comienza en 1
         distanceScrollBar = 1;
+
     }
 
     void Update()
@@ -30,10 +31,6 @@ public class ScrollBar : MonoBehaviour
         {
             Controller_Hud.gameOver = true;
         }
-        //if (bar.value < 1 )
-        //{
-        //    distanceScrollBar = 1;
-        //    distanceScrollBar += Time.deltaTime;
-        //}
+   
     }
 }
