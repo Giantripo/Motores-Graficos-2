@@ -3,8 +3,10 @@
 	Properties
 	{
 		_MainTex("Texture", 2D ) = "white" {}
-		_Speed("Speed", Range(0,10)) = 0.5
+	    //velocidad que se mueve la textura
+		_Speed("Speed", Range(0,10)) = 0.5 
 
+			//configuracion de las ondas
 			_Amplitude("Amplitude",Range(0,2)) = 0
 		_Frecuency("Frecuency", Range(0, 2)) = 0
 		_Phase("Phase", Range(0, 2)) = 0

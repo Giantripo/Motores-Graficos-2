@@ -57,8 +57,7 @@ public class Controller_Player : MonoBehaviour
                 {
                     rb.transform.localScale = new Vector3(rb.transform.localScale.x, initialSize, rb.transform.localScale.z);
                     i = 0;
-                }
-            }
+                }            }
         }
         else
         //si es que esta en el piso y se presiona la S baja 
